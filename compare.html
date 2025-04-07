@@ -1,0 +1,332 @@
+<section id="compare-section">
+    <div class="container">
+        <h2 class="section-title">Compare Avatars</h2>
+        <p class="section-description">Explore the similarities and differences between any two of Lord Vishnu's incarnations.</p>
+        
+        <div class="comparison-tool">
+            <div class="comparison-selectors">
+                <div class="comparison-select">
+                    <label for="avatar1">Select First Avatar</label>
+                    <select id="avatar1" class="avatar-select">
+                        <option value="">Choose an Avatar</option>
+                        <option value="matsya">Matsya (The Fish)</option>
+                        <option value="kurma">Kurma (The Tortoise)</option>
+                        <option value="varaha">Varaha (The Boar)</option>
+                        <option value="narasimha">Narasimha (The Man-Lion)</option>
+                        <option value="vamana">Vamana (The Dwarf)</option>
+                        <option value="parashurama">Parashurama (The Warrior Sage)</option>
+                        <option value="rama">Rama (The Ideal King)</option>
+                        <option value="krishna">Krishna (The Divine Strategist)</option>
+                        <option value="balarama">Balarama (The Farmer-Protector)</option>
+                        <option value="buddha">Buddha (The Enlightened One)</option>
+                        <option value="kalki">Kalki (The Future Warrior)</option>
+                    </select>
+                </div>
+                
+                <div class="comparison-select">
+                    <label for="avatar2">Select Second Avatar</label>
+                    <select id="avatar2" class="avatar-select">
+                        <option value="">Choose an Avatar</option>
+                        <option value="matsya">Matsya (The Fish)</option>
+                        <option value="kurma">Kurma (The Tortoise)</option>
+                        <option value="varaha">Varaha (The Boar)</option>
+                        <option value="narasimha">Narasimha (The Man-Lion)</option>
+                        <option value="vamana">Vamana (The Dwarf)</option>
+                        <option value="parashurama">Parashurama (The Warrior Sage)</option>
+                        <option value="rama">Rama (The Ideal King)</option>
+                        <option value="krishna">Krishna (The Divine Strategist)</option>
+                        <option value="balarama">Balarama (The Farmer-Protector)</option>
+                        <option value="buddha">Buddha (The Enlightened One)</option>
+                        <option value="kalki">Kalki (The Future Warrior)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button id="compare-btn">Compare Avatars</button>
+            
+            <div id="comparison-results" class="comparison-results-container" style="display: none;">
+                <div class="comparison-header">
+                    <h3>Avatar Comparison</h3>
+                </div>
+                
+                <div class="comparison-cards">
+                    <div class="comparison-card" id="avatar1-card">
+                        <img id="avatar1-img" src="" alt="Avatar 1">
+                        <h4 id="avatar1-name"></h4>
+                        <p id="avatar1-era" class="era"></p>
+                    </div>
+                    
+                    <div class="comparison-vs">VS</div>
+                    
+                    <div class="comparison-card" id="avatar2-card">
+                        <img id="avatar2-img" src="" alt="Avatar 2">
+                        <h4 id="avatar2-name"></h4>
+                        <p id="avatar2-era" class="era"></p>
+                    </div>
+                </div>
+                
+                <div class="comparison-details">
+                    <h4>Key Attributes</h4>
+                    <div class="comparison-table">
+                        <table>
+                            <tr>
+                                <th>Attribute</th>
+                                <th id="table-avatar1-name"></th>
+                                <th id="table-avatar2-name"></th>
+                            </tr>
+                            <tr>
+                                <td>Yuga (Era)</td>
+                                <td id="avatar1-yuga"></td>
+                                <td id="avatar2-yuga"></td>
+                            </tr>
+                            <tr>
+                                <td>Weapon</td>
+                                <td id="avatar1-weapon"></td>
+                                <td id="avatar2-weapon"></td>
+                            </tr>
+                            <tr>
+                                <td>Mount</td>
+                                <td id="avatar1-mount"></td>
+                                <td id="avatar2-mount"></td>
+                            </tr>
+                            <tr>
+                                <td>Symbolic Meaning</td>
+                                <td id="avatar1-symbolism"></td>
+                                <td id="avatar2-symbolism"></td>
+                            </tr>
+                            <tr>
+                                <td>Philosophical Interpretation</td>
+                                <td id="avatar1-philosophy"></td>
+                                <td id="avatar2-philosophy"></td>
+                            </tr>
+                            <tr>
+                                <td>Moral Lesson</td>
+                                <td id="avatar1-moral"></td>
+                                <td id="avatar2-moral"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <h4>Key Myths</h4>
+                    <div class="comparison-table">
+                        <table>
+                            <tr>
+                                <th id="myth-avatar1-name"></th>
+                                <th id="myth-avatar2-name"></th>
+                            </tr>
+                            <tr>
+                                <td id="avatar1-myth"></td>
+                                <td id="avatar2-myth"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const avatarData = {
+            matsya: {
+                name: "Matsya (The Fish)",
+                sanskrit: "मत्स्य अवतार",
+                era: "Satya Yuga",
+                image: "public/images/avatars/matsya.jpg",
+                weapon: "None",
+                mount: "Water/ocean (not a specific vahana)",
+                symbolism: "Evolution from aquatic to terrestrial life",
+                philosophy: "The instinct to survive - symbolizes our earliest human instincts of survival, preservation of knowledge, and protection of life from chaos.",
+                moral: "Preservation of knowledge and life through preparedness and faith.",
+                myth: "Matsya warns Manu of a great deluge, saving sages and the Vedas by guiding a boat. When the demon Hayagriva stole the Vedas from Lord Brahma, Vishnu took the form of a fish to recover them and save mankind from the flood."
+            },
+            kurma: {
+                name: "Kurma (The Tortoise)",
+                sanskrit: "कूर्म अवतार",
+                era: "Satya Yuga",
+                image: "public/images/avatars/kurma.jpg",
+                weapon: "None",
+                mount: "Water",
+                symbolism: "Stability and support in chaos",
+                philosophy: "The strength of stability - represents the importance of patience and inner stability when navigating emotional or societal upheaval.",
+                moral: "Sometimes, being a silent supporter enables great achievements.",
+                myth: "Kurma supports Mount Mandara during the churning of the ocean (Samudra Manthan). The devas and asuras used Mount Mandara as the churning rod with Vasuki as the rope, but the mountain began to sink until Vishnu supported it on his back as a turtle."
+            },
+            varaha: {
+                name: "Varaha (The Boar)",
+                sanskrit: "वराह अवतार",
+                era: "Satya Yuga",
+                image: "public/images/avatars/varaha.jpg",
+                weapon: "Tusks",
+                mount: "None (walks/runs)",
+                symbolism: "Emergence from darkness and ignorance",
+                philosophy: "Rising above darkness - mirrors the human journey from ignorance to awareness, symbolizing our power to uplift ourselves and others from despair.",
+                moral: "The divine restores balance even when the world is submerged in chaos.",
+                myth: "Varaha lifts Earth (Bhudevi) from cosmic waters after defeating the demon Hiranyaksha who had dragged the Earth into the cosmic ocean. Vishnu took the form of a boar to rescue her and restore cosmic balance."
+            },
+            narasimha: {
+                name: "Narasimha (The Man-Lion)",
+                sanskrit: "नरसिंह अवतार",
+                era: "Satya Yuga",
+                image: "public/images/avatars/narasimha.jpg",
+                weapon: "Claws",
+                mount: "None",
+                symbolism: "Divine justice transcends logic",
+                philosophy: "The fierce protector within - embodies righteous fury and our inner capacity to protect truth and justice when conventional methods fail.",
+                moral: "Ego and tyranny fall before righteousness, no matter how cleverly protected.",
+                myth: "Narasimha kills demon Hiranyakashipu, honoring a boon in a paradoxical form. The demon had received a boon that he could not be killed by man or animal, inside or outside, day or night, on earth or in sky, by any weapon. Vishnu appeared as half-man, half-lion at twilight, on a threshold, placing the demon on his lap, and using his claws."
+            },
+            vamana: {
+                name: "Vamana (The Dwarf)",
+                sanskrit: "वामन अवतार",
+                era: "Treta Yuga",
+                image: "public/images/avatars/vamana.jpg",
+                weapon: "Umbrella (symbolic), sacred thread",
+                mount: "None",
+                symbolism: "Humility overcoming pride",
+                philosophy: "The humble challenger - teaches that ego can be undone not by force, but by subtlety and intelligence, showing how humility can outwit pride.",
+                moral: "True power lies in humility and wisdom, not size or strength.",
+                myth: "Vamana asks king Bali for 3 steps of land and expands to cosmic form to reclaim the universe. The demon king Bali had conquered the three worlds, and Vishnu appeared as a dwarf Brahmin, asking for just three steps of land, then grew to cosmic proportions to measure all of creation in three steps."
+            },
+            parashurama: {
+                name: "Parashurama (The Warrior Sage)",
+                sanskrit: "परशुराम अवतार",
+                era: "Treta Yuga",
+                image: "public/images/avatars/parashurama.jpg",
+                weapon: "Axe (Parashu)",
+                mount: "None",
+                symbolism: "Discipline and righteous anger",
+                philosophy: "Mastering inner conflict - symbolizes controlled aggression and our struggle to master anger and direct it toward restoring balance.",
+                moral: "Justice sometimes demands force, but must always be guided by ethics.",
+                myth: "Parashurama exterminates corrupt Kshatriyas to restore dharma. After King Kartavirya killed his father, Parashurama vowed to rid the earth of corrupt warriors and kings, waging a campaign against unrighteous rulers for twenty-one generations."
+            },
+            rama: {
+                name: "Rama (The Ideal King)",
+                sanskrit: "राम अवतार",
+                era: "Treta Yuga",
+                image: "public/images/avatars/rama.jpg",
+                weapon: "Bow and arrow",
+                mount: "Horse/chariot (symbolic)",
+                symbolism: "Dharma in action",
+                philosophy: "The ideal self - reflects human aspiration to live with integrity, embodying self-sacrifice and adherence to duty even at personal cost.",
+                moral: "Integrity, honor, and duty above all – even personal comfort.",
+                myth: "Hero of the Ramayana, exiled prince who defeats Ravana and upholds righteousness. Rama was exiled for fourteen years, during which his wife Sita was abducted by the demon king Ravana. With the help of Hanuman and an army of monkeys, Rama defeated Ravana and rescued Sita."
+            },
+            krishna: {
+                name: "Krishna (The Divine Strategist)",
+                sanskrit: "कृष्ण अवतार",
+                era: "Dwapara Yuga",
+                image: "public/images/avatars/krishna.jpg",
+                weapon: "Sudarshana Chakra, flute (symbol of love and mysticism)",
+                mount: "Garuda (occasionally), chariot in Mahabharata",
+                symbolism: "Divine play and wisdom",
+                philosophy: "The enlightened guide - represents the complexity of life and the need for flexibility, joy, and divine detachment in navigating moral dilemmas.",
+                moral: "Life is a balance of joy, duty, and wisdom – live consciously.",
+                myth: "Central to Mahabharata, gives Bhagavad Gita to Arjuna, enacts leelas (divine plays). Krishna guided the Pandavas in the Kurukshetra war, serving as Arjuna's charioteer and delivering the Bhagavad Gita. He also performed many miraculous feats throughout his life."
+            },
+            balarama: {
+                name: "Balarama (The Farmer-Protector)",
+                sanskrit: "बलराम अवतार",
+                era: "Dwapara Yuga",
+                image: "public/images/avatars/balarama.jpg",
+                weapon: "Plough (Hala), mace",
+                mount: "None",
+                symbolism: "Strength and devotion",
+                philosophy: "Discipline and steadfastness - represents physical strength and the ethical farmer, rooted in dharma and community.",
+                moral: "Hard work and physical strength rooted in dharma.",
+                myth: "Brother of Krishna, represents agricultural society. Originally meant to be born to Devaki, he was transferred to Rohini's womb to protect him from Kamsa. He is known for his incredible strength and skill with the plough, which he also used as a weapon."
+            },
+            buddha: {
+                name: "Buddha (The Enlightened One)",
+                sanskrit: "बुद्ध अवतार",
+                era: "Kali Yuga",
+                image: "public/images/avatars/buddha.jpg",
+                weapon: "None",
+                mount: "None",
+                symbolism: "Compassion and inner peace",
+                philosophy: "Detachment and compassion - represents the inward turn of consciousness and the realization that peace lies in understanding, not conquest.",
+                moral: "True change comes through compassion, awareness, and letting go.",
+                myth: "Siddhartha Gautama attains enlightenment and teaches the Eightfold Path. Born a prince, he renounced his royal life after witnessing suffering, and after years of ascetic practice, attained enlightenment under the Bodhi tree, founding Buddhism."
+            },
+            kalki: {
+                name: "Kalki (The Future Warrior)",
+                sanskrit: "कल्कि अवतार",
+                era: "End of Kali Yuga",
+                image: "public/images/avatars/kalki.jpg",
+                weapon: "Sword",
+                mount: "White horse",
+                symbolism: "Renewal, end of darkness",
+                philosophy: "The inner reformer - represents our potential to end cycles of decay within ourselves and society, and the promise that truth renews itself in time.",
+                moral: "No evil lasts forever—truth and justice will ultimately prevail.",
+                myth: "Yet to appear at the end of Kali Yuga to destroy evil and reset the cycle. Kalki will appear riding a white horse with a blazing sword to end the age of darkness and begin a new cycle of time."
+            }
+        };
+        
+        const compareBtn = document.getElementById('compare-btn');
+        const avatar1Select = document.getElementById('avatar1');
+        const avatar2Select = document.getElementById('avatar2');
+        const comparisonResults = document.getElementById('comparison-results');
+        
+        compareBtn.addEventListener('click', function() {
+            const avatar1 = avatar1Select.value;
+            const avatar2 = avatar2Select.value;
+            
+            if (!avatar1 || !avatar2) {
+                alert('Please select two avatars to compare');
+                return;
+            }
+            
+            if (avatar1 === avatar2) {
+                alert('Please select two different avatars');
+                return;
+            }
+            
+            // Display the comparison results
+            comparisonResults.style.display = 'block';
+            
+            // Update avatar 1 information
+            document.getElementById('avatar1-img').src = avatarData[avatar1].image;
+            document.getElementById('avatar1-name').textContent = avatarData[avatar1].name;
+            document.getElementById('avatar1-era').textContent = avatarData[avatar1].era;
+            
+            // Update avatar 2 information
+            document.getElementById('avatar2-img').src = avatarData[avatar2].image;
+            document.getElementById('avatar2-name').textContent = avatarData[avatar2].name;
+            document.getElementById('avatar2-era').textContent = avatarData[avatar2].era;
+            
+            // Update table headers
+            document.getElementById('table-avatar1-name').textContent = avatarData[avatar1].name;
+            document.getElementById('table-avatar2-name').textContent = avatarData[avatar2].name;
+            
+            // Update attribute comparisons
+            document.getElementById('avatar1-yuga').textContent = avatarData[avatar1].era;
+            document.getElementById('avatar2-yuga').textContent = avatarData[avatar2].era;
+            
+            document.getElementById('avatar1-weapon').textContent = avatarData[avatar1].weapon;
+            document.getElementById('avatar2-weapon').textContent = avatarData[avatar2].weapon;
+            
+            document.getElementById('avatar1-mount').textContent = avatarData[avatar1].mount;
+            document.getElementById('avatar2-mount').textContent = avatarData[avatar2].mount;
+            
+            document.getElementById('avatar1-symbolism').textContent = avatarData[avatar1].symbolism;
+            document.getElementById('avatar2-symbolism').textContent = avatarData[avatar2].symbolism;
+            
+            document.getElementById('avatar1-philosophy').textContent = avatarData[avatar1].philosophy;
+            document.getElementById('avatar2-philosophy').textContent = avatarData[avatar2].philosophy;
+            
+            document.getElementById('avatar1-moral').textContent = avatarData[avatar1].moral;
+            document.getElementById('avatar2-moral').textContent = avatarData[avatar2].moral;
+            
+            // Update myth comparison
+            document.getElementById('myth-avatar1-name').textContent = avatarData[avatar1].name;
+            document.getElementById('myth-avatar2-name').textContent = avatarData[avatar2].name;
+            
+            document.getElementById('avatar1-myth').textContent = avatarData[avatar1].myth;
+            document.getElementById('avatar2-myth').textContent = avatarData[avatar2].myth;
+            
+            // Scroll to the results
+            comparisonResults.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
