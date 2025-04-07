@@ -2298,3 +2298,40 @@ section:not(:last-child)::after {
         padding: 10px;
     }
 }
+
+
+/* Dark theme adjustments */
+[data-theme="dark"] .comparison-card {
+    background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .comparison-table th {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ... existing responsive adjustments ... */
+
+/* Fix for Avatars Introduction and Philosophy visibility */
+.avatars-introduction {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.philosophy-section {
+    display: block;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
