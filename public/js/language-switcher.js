@@ -1,0 +1,181 @@
+// Language Switcher for Dashavatar Project
+
+// Store all translatable content
+const translations = {
+    'en': {
+        // Navigation
+        'nav_home': 'Home',
+        'nav_avatars': 'Avatars',
+        'nav_timeline': 'Timeline',
+        'nav_quiz': 'Quiz',
+        'nav_resources': 'Resources',
+        'nav_compare': 'Compare',
+        
+        // Avatar details
+        'avatar_story_title': 'Story',
+        'avatar_evolution_title': 'Evolution & Significance',
+        'avatar_symbols_title': 'Symbols & Representations',
+        'avatar_more_info': 'More Information',
+        'avatar_flip': 'Flip Card',
+        'avatar_back': 'Back',
+        
+        // Avatars specific content
+        'matsya': {
+            'title': 'Matsya Avatar',
+            'sanskrit': 'मत्स्य अवतार',
+            'era': 'Satya Yuga',
+            'story': 'Matsya (Fish) was the first avatar of Lord Vishnu. When the demon Hayagriva stole the Vedas from Lord Brahma and hid them in the depths of the cosmic ocean, Lord Vishnu took the form of a fish to recover them. During this time, he also saved Manu (the progenitor of mankind) from a great deluge, instructing him to build a boat and collect all species of plants and animals.',
+            'evolution': 'The Matsya avatar represents the beginning of life in water, symbolizing the evolutionary process from aquatic life forms. This avatar saved the Vedas, preserving knowledge and wisdom for future generations. The story of Matsya saving Manu from the great flood has parallels in many world cultures, including the Biblical story of Noah\'s Ark.',
+            'symbols': 'Matsya is typically depicted as half-man and half-fish, holding a conch shell (shankha), a discus (chakra), a lotus (padma), and a mace (gada) - the four symbols of Vishnu.'
+        },
+        'kurma': {
+            'title': 'Kurma Avatar',
+            'sanskrit': 'कूर्म अवतार',
+            'era': 'Satya Yuga',
+            'story': 'Kurma (Turtle) was the second avatar of Lord Vishnu. The devas (gods) and asuras (demons) were churning the cosmic ocean to obtain amrita (the nectar of immortality). They used Mount Mandara as the churning rod and the serpent Vasuki as the rope. However, the mountain began to sink. Lord Vishnu took the form of a giant turtle, dove to the bottom of the ocean, and supported the mountain on his back, allowing the churning to continue.',
+            'evolution': 'The Kurma avatar represents the transition of life from water to amphibious existence, symbolizing evolution from purely aquatic creatures to those that could survive on both land and water. This avatar is associated with stability and support, providing the foundation for cosmic creation.',
+            'symbols': 'Kurma is depicted as a turtle or as a human torso on a turtle base. The churning of the ocean (Samudra Manthan) produced many divine treasures including the goddess Lakshmi, the divine physician Dhanvantari with amrita, and the deadly poison Halahala which Shiva consumed.'
+        },
+        // Add more avatars here
+    },
+    'hi': {
+        // Navigation
+        'nav_home': 'मुख्य पृष्ठ',
+        'nav_avatars': 'अवतार',
+        'nav_timeline': 'समयरेखा',
+        'nav_quiz': 'प्रश्नोत्तरी',
+        'nav_resources': 'संसाधन',
+        'nav_compare': 'तुलना करें',
+        
+        // Avatar details
+        'avatar_story_title': 'कथा',
+        'avatar_evolution_title': 'विकास और महत्व',
+        'avatar_symbols_title': 'प्रतीक और निरूपण',
+        'avatar_more_info': 'अधिक जानकारी',
+        'avatar_flip': 'कार्ड पलटें',
+        'avatar_back': 'वापस',
+        
+        // Avatars specific content
+        'matsya': {
+            'title': 'मत्स्य अवतार',
+            'sanskrit': 'मत्स्य अवतार',
+            'era': 'सत्य युग',
+            'story': 'मत्स्य (मछली) भगवान विष्णु का पहला अवतार था। जब हयग्रीव राक्षस ने भगवान ब्रह्मा से वेदों को चुरा लिया और उन्हें ब्रह्मांडीय समुद्र की गहराई में छिपा दिया, तब भगवान विष्णु ने उन्हें पुनः प्राप्त करने के लिए एक मछली का रूप धारण किया। इस दौरान, उन्होंने मनु (मानव जाति के जनक) को एक महाप्रलय से भी बचाया, उन्हें एक नाव बनाने और पौधों और जानवरों की सभी प्रजातियों को इकट्ठा करने का निर्देश दिया।',
+            'evolution': 'मत्स्य अवतार पानी में जीवन की शुरुआत का प्रतिनिधित्व करता है, जो जलीय जीवन रूपों से विकासवादी प्रक्रिया का प्रतीक है। इस अवतार ने वेदों को बचाया, भविष्य की पीढ़ियों के लिए ज्ञान और बुद्धि को संरक्षित किया। मत्स्य द्वारा मनु को महाप्रलय से बचाने की कहानी की कई विश्व संस्कृतियों में समानताएं हैं, जिसमें बाइबिल की नूह के आर्क की कहानी भी शामिल है।',
+            'symbols': 'मत्स्य को आमतौर पर आधा-मनुष्य और आधा-मछली के रूप में दर्शाया जाता है, जो शंख, चक्र, पद्म और गदा - विष्णु के चार प्रतीकों को धारण करते हैं।'
+        },
+        'kurma': {
+            'title': 'कूर्म अवतार',
+            'sanskrit': 'कूर्म अवतार',
+            'era': 'सत्य युग',
+            'story': 'कूर्म (कछुआ) भगवान विष्णु का दूसरा अवतार था। देवता और असुर अमृत (अमरता का अमृत) प्राप्त करने के लिए ब्रह्मांडीय समुद्र का मंथन कर रहे थे। उन्होंने मंदार पर्वत को मंथन छड़ के रूप में और वासुकि सर्प को रस्सी के रूप में उपयोग किया। हालांकि, पर्वत डूबने लगा। भगवान विष्णु ने एक विशाल कछुए का रूप धारण किया, समुद्र के तल तक गए, और अपनी पीठ पर पर्वत को सहारा दिया, जिससे मंथन जारी रह सका।',
+            'evolution': 'कूर्म अवतार पानी से उभयचर अस्तित्व तक जीवन के संक्रमण का प्रतिनिधित्व करता है, जो विशुद्ध रूप से जलीय जीवों से उन जीवों तक के विकास का प्रतीक है जो जमीन और पानी दोनों पर जीवित रह सकते हैं। यह अवतार स्थिरता और समर्थन से जुड़ा है, जो ब्रह्मांडीय सृष्टि के लिए आधार प्रदान करता है।',
+            'symbols': 'कूर्म को एक कछुए के रूप में या एक कछुए के आधार पर मानव धड़ के रूप में दर्शाया गया है। समुद्र मंथन (समुद्र मंथन) से कई दिव्य खजाने निकले, जिनमें देवी लक्ष्मी, अमृत के साथ दिव्य चिकित्सक धन्वंतरि, और घातक विष हलाहल शामिल हैं, जिसे शिव ने ग्रहण किया था।'
+        },
+        // Add more avatars here
+    },
+    // Add more languages as needed
+};
+
+// Function to update all translatable content on the page
+function updatePageLanguage(lang) {
+    // Default to English if the selected language is not available
+    if (!translations[lang]) {
+        lang = 'en';
+    }
+    
+    // Update navigation items
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Update avatar details if we're on an avatar page
+    const currentAvatar = document.querySelector('.avatar-details')?.getAttribute('data-avatar');
+    if (currentAvatar && translations[lang][currentAvatar]) {
+        // Update title
+        const titleElement = document.querySelector('.avatar-details h2');
+        if (titleElement) {
+            titleElement.innerHTML = translations[lang][currentAvatar].title + 
+                ' <span class="sanskrit">' + translations[lang][currentAvatar].sanskrit + '</span>';
+        }
+        
+        // Update era
+        const eraElement = document.querySelector('.avatar-details .era');
+        if (eraElement) {
+            eraElement.textContent = translations[lang][currentAvatar].era;
+        }
+        
+        // Update story
+        const storyElement = document.querySelector('.avatar-story p');
+        if (storyElement) {
+            storyElement.textContent = translations[lang][currentAvatar].story;
+        }
+        
+        // Update evolution
+        const evolutionElement = document.querySelector('.avatar-evolution p');
+        if (evolutionElement) {
+            evolutionElement.textContent = translations[lang][currentAvatar].evolution;
+        }
+        
+        // Update symbols if present
+        const symbolsElement = document.querySelector('.avatar-symbols p');
+        if (symbolsElement && translations[lang][currentAvatar].symbols) {
+            symbolsElement.textContent = translations[lang][currentAvatar].symbols;
+        }
+        
+        // Update section titles
+        const storyTitle = document.querySelector('.avatar-story h3');
+        if (storyTitle) {
+            storyTitle.textContent = translations[lang].avatar_story_title;
+        }
+        
+        const evolutionTitle = document.querySelector('.avatar-evolution h3');
+        if (evolutionTitle) {
+            evolutionTitle.textContent = translations[lang].avatar_evolution_title;
+        }
+        
+        const symbolsTitle = document.querySelector('.avatar-symbols h3');
+        if (symbolsTitle) {
+            symbolsTitle.textContent = translations[lang].avatar_symbols_title;
+        }
+        
+        // Update buttons
+        const flipBtn = document.querySelector('.flip-btn');
+        if (flipBtn) {
+            flipBtn.textContent = translations[lang].avatar_flip;
+        }
+        
+        const backBtn = document.querySelector('.avatar-card-back .flip-btn');
+        if (backBtn) {
+            backBtn.textContent = translations[lang].avatar_back;
+        }
+    }
+}
+
+// Initialize language switcher
+document.addEventListener('DOMContentLoaded', function() {
+    const langSelect = document.getElementById('lang-select');
+    
+    if (langSelect) {
+        // Set initial language based on select value
+        updatePageLanguage(langSelect.value);
+        
+        // Add event listener for language change
+        langSelect.addEventListener('change', function() {
+            updatePageLanguage(this.value);
+            
+            // Store language preference in localStorage
+            localStorage.setItem('preferredLanguage', this.value);
+        });
+    }
+    
+    // Check for stored language preference
+    const storedLang = localStorage.getItem('preferredLanguage');
+    if (storedLang && langSelect) {
+        langSelect.value = storedLang;
+        updatePageLanguage(storedLang);
+    }
+});
