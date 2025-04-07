@@ -74,13 +74,34 @@ const translations = {
         },
         // Add more avatars here
     },
-    // Add more languages as needed
+    'sa': {
+        // Add Sanskrit translations
+        'nav_home': 'गृहम्',
+        'nav_avatars': 'अवतारः',
+        'nav_timeline': 'कालरेखा',
+        'nav_quiz': 'प्रश्नोत्तरी',
+        'nav_resources': 'संसाधनानि',
+        'nav_compare': 'तुलना',
+        
+        // Avatar details
+        'avatar_story_title': 'कथा',
+        'avatar_evolution_title': 'विकासः महत्त्वं च',
+        'avatar_symbols_title': 'प्रतीकानि निरूपणानि च',
+        'avatar_more_info': 'अधिकजानकारी',
+        'avatar_flip': 'पत्रं परिवर्तयतु',
+        'avatar_back': 'पुनरागमनम्',
+        
+        // Add Sanskrit translations for avatars
+    }
 };
 
 // Function to update all translatable content on the page
 function updatePageLanguage(lang) {
+    console.log("Updating language to: " + lang);
+    
     // Default to English if the selected language is not available
     if (!translations[lang]) {
+        console.log("Language not found, defaulting to English");
         lang = 'en';
     }
     
@@ -89,93 +110,106 @@ function updatePageLanguage(lang) {
         const key = element.getAttribute('data-lang-key');
         if (translations[lang][key]) {
             element.textContent = translations[lang][key];
+            console.log("Updated element with key: " + key);
         }
     });
     
     // Update avatar details if we're on an avatar page
-    const currentAvatar = document.querySelector('.avatar-details')?.getAttribute('data-avatar');
-    if (currentAvatar && translations[lang][currentAvatar]) {
-        // Update title
-        const titleElement = document.querySelector('.avatar-details h2');
-        if (titleElement) {
-            titleElement.innerHTML = translations[lang][currentAvatar].title + 
-                ' <span class="sanskrit">' + translations[lang][currentAvatar].sanskrit + '</span>';
-        }
+    const avatarElements = document.querySelectorAll('[data-avatar]');
+    
+    avatarElements.forEach(avatarElement => {
+        const currentAvatar = avatarElement.getAttribute('data-avatar');
+        console.log("Found avatar: " + currentAvatar);
         
-        // Update era
-        const eraElement = document.querySelector('.avatar-details .era');
-        if (eraElement) {
-            eraElement.textContent = translations[lang][currentAvatar].era;
+        if (currentAvatar && translations[lang][currentAvatar]) {
+            // Update title
+            const titleElement = avatarElement.querySelector('h2');
+            if (titleElement) {
+                titleElement.innerHTML = translations[lang][currentAvatar].title + 
+                    ' <span class="sanskrit">' + translations[lang][currentAvatar].sanskrit + '</span>';
+                console.log("Updated title for: " + currentAvatar);
+            }
+            
+            // Update era
+            const eraElement = avatarElement.querySelector('.era');
+            if (eraElement) {
+                eraElement.textContent = translations[lang][currentAvatar].era;
+                console.log("Updated era for: " + currentAvatar);
+            }
+            
+            // Update story
+            const storyElement = avatarElement.querySelector('.avatar-story p');
+            if (storyElement) {
+                storyElement.textContent = translations[lang][currentAvatar].story;
+                console.log("Updated story for: " + currentAvatar);
+            }
+            
+            // Update evolution
+            const evolutionElement = avatarElement.querySelector('.avatar-evolution p');
+            if (evolutionElement) {
+                evolutionElement.textContent = translations[lang][currentAvatar].evolution;
+                console.log("Updated evolution for: " + currentAvatar);
+            }
+            
+            // Update symbols if present
+            const symbolsElement = avatarElement.querySelector('.avatar-symbols p');
+            if (symbolsElement && translations[lang][currentAvatar].symbols) {
+                symbolsElement.textContent = translations[lang][currentAvatar].symbols;
+                console.log("Updated symbols for: " + currentAvatar);
+            }
         }
-        
-        // Update story
-        const storyElement = document.querySelector('.avatar-story p');
-        if (storyElement) {
-            storyElement.textContent = translations[lang][currentAvatar].story;
+    });
+    
+    // Update section titles
+    document.querySelectorAll('.avatar-story h3').forEach(el => {
+        el.textContent = translations[lang].avatar_story_title;
+    });
+    
+    document.querySelectorAll('.avatar-evolution h3').forEach(el => {
+        el.textContent = translations[lang].avatar_evolution_title;
+    });
+    
+    document.querySelectorAll('.avatar-symbols h3').forEach(el => {
+        el.textContent = translations[lang].avatar_symbols_title;
+    });
+    
+    // Update buttons
+    document.querySelectorAll('.flip-btn').forEach(btn => {
+        if (!btn.closest('.avatar-card-back')) {
+            btn.textContent = translations[lang].avatar_flip;
+        } else {
+            btn.textContent = translations[lang].avatar_back;
         }
-        
-        // Update evolution
-        const evolutionElement = document.querySelector('.avatar-evolution p');
-        if (evolutionElement) {
-            evolutionElement.textContent = translations[lang][currentAvatar].evolution;
-        }
-        
-        // Update symbols if present
-        const symbolsElement = document.querySelector('.avatar-symbols p');
-        if (symbolsElement && translations[lang][currentAvatar].symbols) {
-            symbolsElement.textContent = translations[lang][currentAvatar].symbols;
-        }
-        
-        // Update section titles
-        const storyTitle = document.querySelector('.avatar-story h3');
-        if (storyTitle) {
-            storyTitle.textContent = translations[lang].avatar_story_title;
-        }
-        
-        const evolutionTitle = document.querySelector('.avatar-evolution h3');
-        if (evolutionTitle) {
-            evolutionTitle.textContent = translations[lang].avatar_evolution_title;
-        }
-        
-        const symbolsTitle = document.querySelector('.avatar-symbols h3');
-        if (symbolsTitle) {
-            symbolsTitle.textContent = translations[lang].avatar_symbols_title;
-        }
-        
-        // Update buttons
-        const flipBtn = document.querySelector('.flip-btn');
-        if (flipBtn) {
-            flipBtn.textContent = translations[lang].avatar_flip;
-        }
-        
-        const backBtn = document.querySelector('.avatar-card-back .flip-btn');
-        if (backBtn) {
-            backBtn.textContent = translations[lang].avatar_back;
-        }
-    }
+    });
 }
 
 // Initialize language switcher
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM loaded, initializing language switcher");
     const langSelect = document.getElementById('lang-select');
     
     if (langSelect) {
+        console.log("Language selector found");
+        
+        // Check for stored language preference
+        const storedLang = localStorage.getItem('preferredLanguage');
+        if (storedLang) {
+            console.log("Found stored language: " + storedLang);
+            langSelect.value = storedLang;
+        }
+        
         // Set initial language based on select value
         updatePageLanguage(langSelect.value);
         
         // Add event listener for language change
         langSelect.addEventListener('change', function() {
+            console.log("Language changed to: " + this.value);
             updatePageLanguage(this.value);
             
             // Store language preference in localStorage
             localStorage.setItem('preferredLanguage', this.value);
         });
-    }
-    
-    // Check for stored language preference
-    const storedLang = localStorage.getItem('preferredLanguage');
-    if (storedLang && langSelect) {
-        langSelect.value = storedLang;
-        updatePageLanguage(storedLang);
+    } else {
+        console.log("Language selector not found");
     }
 });

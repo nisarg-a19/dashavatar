@@ -1,31 +1,36 @@
-<!-- Add this to your head section -->
-<script src="public/js/language-switcher.js" defer></script>
-
-<!-- Update your navigation items with data attributes -->
-<nav id="main-nav">
-    <div class="logo">Dashavatar</div>
-    <ul>
-        <li><a href="#home" data-lang-key="nav_home">Home</a></li>
-        <li><a href="#avatars" data-lang-key="nav_avatars">Avatars</a></li>
-        <li><a href="#timeline" data-lang-key="nav_timeline">Timeline</a></li>
-        <li><a href="#quiz" data-lang-key="nav_quiz">Quiz</a></li>
-        <li><a href="#resources" data-lang-key="nav_resources">Resources</a></li>
-        <li><a href="#compare" data-lang-key="nav_compare">Compare</a></li>
-    </ul>
-</nav>
-
-<!-- Update your avatar details section to include data-avatar attribute -->
-<div class="avatar-details" data-avatar="matsya">
-    <h2>Matsya Avatar <span class="sanskrit">मत्स्य अवतार</span></h2>
-    <p class="era">Satya Yuga</p>
-    <!-- Rest of your avatar details -->
-    <div class="avatar-story">
-        <h3 data-lang-key="avatar_story_title">Story</h3>
-        <p><!-- Story content --></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashavatar - The Ten Incarnations of Lord Vishnu</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <!-- Add the language switcher script -->
+    <script src="public/js/language-switcher.js" defer></script>
+</head>
+<body>
+    <!-- Language selector -->
+    <div id="language-selector">
+        <select id="lang-select">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="sa">संस्कृत</option>
+        </select>
     </div>
-    <div class="avatar-evolution">
-        <h3 data-lang-key="avatar_evolution_title">Evolution & Significance</h3>
-        <p><!-- Evolution content --></p>
-    </div>
-    <!-- Add similar structure for other sections -->
-</div>
+
+    <!-- Rest of your HTML -->
+    <nav id="main-nav">
+        <div class="logo">Dashavatar</div>
+        <ul>
+            <li><a href="#home" data-lang-key="nav_home">Home</a></li>
+            <li><a href="#avatars" data-lang-key="nav_avatars">Avatars</a></li>
+            <li><a href="#timeline" data-lang-key="nav_timeline">Timeline</a></li>
+            <li><a href="#quiz" data-lang-key="nav_quiz">Quiz</a></li>
+            <li><a href="#resources" data-lang-key="nav_resources">Resources</a></li>
+            <li><a href="#compare" data-lang-key="nav_compare">Compare</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Rest of your content -->
+</body>
+</html>
