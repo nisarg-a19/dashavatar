@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashavatar - From Myth to Science</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme toggle -->
+    <div id="theme-toggle">
+        <span class="theme-icon light-icon">☀️</span>
+        <span class="theme-icon dark-icon">🌙</span>
+    </div>
+    
+    <!-- Language selector -->
+    <div id="language-selector">
+        <select id="lang-select">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="sa">संस्कृत</option>
+        </select>
+    </div>
+    
+    <nav id="main-nav">
+        <div class="logo">Dashavatar</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#avatars">Avatars</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#compare">Compare</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero">
+            <h1>From Myth to Science</h1>
+            <h2>The Evolutionary Journey of Dashavatars</h2>
+            <button id="explore-btn">Start Exploring</button>
+        </div>
+        <div id="hero-animation"></div>
+    </section>
+
+    <section id="avatars">
+        <div class="avatar-container">
+            <h2 class="section-title">The Ten Avatars</h2>
+            <div class="avatar-nav">
+                <button class="nav-prev">Previous</button>
+                <button class="nav-next">Next</button>
+            </div>
+            <div class="avatar-content"></div>
+        </div>
+    </section>
+
+    <section id="timeline">
+        <div id="timeline-container">
+            <h2 class="section-title">Evolutionary Timeline</h2>
+        </div>
+    </section>
+
+    <!-- New comparison section -->
+    <section id="compare">
+        <div class="compare-container">
+            <h2 class="section-title">Compare Avatars</h2>
+            <div class="comparison-tool">
+                <div class="comparison-selectors">
+                    <div class="comparison-select">
+                        <label for="avatar1">First Avatar</label>
+                        <select id="avatar1" class="avatar-select"></select>
+                    </div>
+                    <div class="comparison-select">
+                        <label for="avatar2">Second Avatar</label>
+                        <select id="avatar2" class="avatar-select"></select>
+                    </div>
+                </div>
+                <button id="compare-btn">Compare</button>
+                <div id="comparison-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <div class="quiz-container">
+            <h2 class="section-title">Test Your Knowledge</h2>
+            <div class="difficulty-selector">
+                <button class="difficulty-btn" data-level="easy">Easy</button>
+                <button class="difficulty-btn" data-level="medium">Medium</button>
+                <button class="difficulty-btn" data-level="hard">Hard</button>
+            </div>
+            <div id="quiz-content"></div>
+        </div>
+    </section>
+
+    <!-- New resources section -->
+    <section id="resources">
+        <div class="resources-container">
+            <h2 class="section-title">Learn More</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-book"></i></div>
+                    <h3>Mythology References</h3>
+                    <p>Explore ancient texts and scholarly interpretations of Dashavatar mythology.</p>
+                    <a href="#" class="resource-link">View Resources</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Scientific Research</h3>
+                    <p>Discover scientific papers on evolutionary biology related to the Dashavatar sequence.</p>
+                    <a href="#" class="resource-link">View Research</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-video"></i></div>
+                    <h3>Video Lectures</h3>
+                    <p>Watch educational videos explaining the connections between mythology and science.</p>
+                    <a href="#" class="resource-link">Watch Videos</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community Forum</h3>
+                    <p>Join discussions with scholars, scientists, and enthusiasts about Dashavatar.</p>
+                    <a href="#" class="resource-link">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter signup -->
+    <section id="newsletter">
+        <div class="newsletter-container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest research and updates</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="data/avatars.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/page-transitions.js"></script>
+    <script src="js/comparison.js"></script>
+    <script src="js/language.js"></script>
+
+    <footer id="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Dashavatar</div>
+            <p>Exploring the connection between Hindu mythology and evolution</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#avatars">Avatars</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#compare">Compare</a>
+                <a href="#resources">Resources</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <p class="copyright">© 2025 Dashavatar Project</p>
+        </div>
+    </footer>
+</body>
+</html>
