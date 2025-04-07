@@ -2335,3 +2335,90 @@ section:not(:last-child)::after {
     position: relative;
     z-index: 1;
 }
+/* ... existing code ... */
+
+/* Fix for Avatars Introduction and Philosophy visibility */
+.avatars-introduction {
+    display: block !important;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.philosophy-section {
+    display: block !important;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ensure avatar templates and comparison sections are visible */
+#avatar-template-section,
+#avatars-section,
+#compare-section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* Dark theme adjustments for these sections */
+[data-theme="dark"] .avatars-introduction {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .avatars-introduction h1,
+[data-theme="dark"] .avatars-introduction h3,
+[data-theme="dark"] .philosophy-section h2 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .avatars-introduction p,
+[data-theme="dark"] .avatars-introduction li,
+[data-theme="dark"] .philosophy-section p.intro {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .avatar-intro-item {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .avatar-intro-item h3 {
+    color: var(--text-light);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .avatar-intro-item strong {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .avatar-variant {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .avatar-variant h4 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .evolutionary-note {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+/* ... existing code ... */
