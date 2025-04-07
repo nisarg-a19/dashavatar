@@ -60,7 +60,61 @@
 [data-theme="dark"] .dark-icon {
     display: inline;
 }
+/* ... existing code ... */
 
+/* Dark theme adjustments */
+[data-theme="dark"] .comparison-card {
+    background-color: var(--card-bg-dark);
+}
+
+[data-theme="dark"] .comparison-table th {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .comparison-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .comparison-table tr:nth-child(5) {
+    background-color: rgba(52, 152, 219, 0.15);
+}
+
+[data-theme="dark"] .comparison-table tr:nth-child(5):hover {
+    background-color: rgba(52, 152, 219, 0.2);
+}
+
+/* Dark mode text visibility fixes */
+[data-theme="dark"] .comparison-card h4 {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .comparison-table td,
+[data-theme="dark"] .comparison-details h4,
+[data-theme="dark"] .section-description,
+[data-theme="dark"] .comparison-select label {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .comparison-table th {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .comparison-card .era {
+    color: #a0c4ff;
+}
+
+[data-theme="dark"] .avatar-select {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .avatar-select option {
+    background-color: var(--card-bg-dark);
+    color: var(--text-light);
+}
+
+/* ... existing responsive adjustments ... */
 * {
     margin: 0;
     padding: 0;
