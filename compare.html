@@ -1,9 +1,10 @@
 <section id="compare-section">
     <div class="container">
         <h2 class="section-title">Compare Avatars</h2>
-        <p class="section-description">Explore the similarities and differences between any two of Lord Vishnu's incarnations.</p>
+        <p class="section-description">Explore the similarities and differences between any two of Lord Vishnu's incarnations, including their philosophical interpretations and symbolic meanings.</p>
         
         <div class="comparison-tool">
+            <!-- Existing selectors remain the same -->
             <div class="comparison-selectors">
                 <div class="comparison-select">
                     <label for="avatar1">Select First Avatar</label>
@@ -53,6 +54,7 @@
                     <div class="comparison-card" id="avatar1-card">
                         <img id="avatar1-img" src="" alt="Avatar 1">
                         <h4 id="avatar1-name"></h4>
+                        <p id="avatar1-sanskrit" class="sanskrit"></p>
                         <p id="avatar1-era" class="era"></p>
                     </div>
                     
@@ -61,6 +63,7 @@
                     <div class="comparison-card" id="avatar2-card">
                         <img id="avatar2-img" src="" alt="Avatar 2">
                         <h4 id="avatar2-name"></h4>
+                        <p id="avatar2-sanskrit" class="sanskrit"></p>
                         <p id="avatar2-era" class="era"></p>
                     </div>
                 </div>
@@ -288,11 +291,13 @@
             // Update avatar 1 information
             document.getElementById('avatar1-img').src = avatarData[avatar1].image;
             document.getElementById('avatar1-name').textContent = avatarData[avatar1].name;
+            document.getElementById('avatar1-sanskrit').textContent = avatarData[avatar1].sanskrit;
             document.getElementById('avatar1-era').textContent = avatarData[avatar1].era;
             
             // Update avatar 2 information
             document.getElementById('avatar2-img').src = avatarData[avatar2].image;
             document.getElementById('avatar2-name').textContent = avatarData[avatar2].name;
+            document.getElementById('avatar2-sanskrit').textContent = avatarData[avatar2].sanskrit;
             document.getElementById('avatar2-era').textContent = avatarData[avatar2].era;
             
             // Update table headers
